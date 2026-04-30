@@ -31,7 +31,7 @@ const RestaurantCard = ({ restaurant }: { restaurant: any }) => {
                     <div className="card-text d-flex align-items-center fs-7 text-muted">{restaurant.rating} <div style={{ overflowX: 'hidden', maxWidth: `${restaurant.rating}ch`, textWrap: 'nowrap', fontFamily: 'monospace' }} className="fs-5 ms-1 mb-1">★★★★★</div></div>
                 </div>
                 <div className="col-auto">
-                    <button className="btn btn-success rounded-circle square"><i className="bi bi-arrow-right"></i></button>
+                    <span className="btn btn-success rounded-circle square"><i className="bi bi-arrow-right"></i></span>
                 </div>
             </div>
         </div>

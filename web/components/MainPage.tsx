@@ -29,6 +29,14 @@ const MainPage = () => {
         return restaurants.filter((restaurant) => restaurant.filter_ids.includes(filter));
 
     }, [restaurants, filter]);
+    const clickHandler = (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
+        e.stopPropagation();
+        if(filter === id) {
+            setFilter(null);
+        } else {
+            setFilter(id);
+        }
+    }
     return <div className="container py-5">
         <img src="/images/logo.png" alt="Munchies" className="img-fluid mb-4" style={{ maxHeight: '40px' }} />
         {loading ? <div className="h-100 d-flex align-items-center justify-content-center fs-1 card p-3"><i className="bi bi-hourglass-split"></i> Loading...</div> : error ? <div className="h-100 d-flex align-items-center justify-content-center fs-1 card p-3"><i className="bi bi-exclamation-circle-fill text-danger"></i> {error}</div> :
@@ -45,7 +53,7 @@ const MainPage = () => {
 
                                     return (
                                         <li key={category.id} className="mb-1">
-                                            <button className={className} onClick={() => setFilter(category.id)}>{category.name} {isActive && <button className="btn btn-transparent text-primary btn-sm" onClick={(e) => { e.stopPropagation(); setFilter(null) }}><i className="bi bi-x-circle-fill"></i></button>}   </button>
+                                            <button className={className} onClick={(e) => clickHandler(e, category.id)}>{category.name} {isActive && <span className="btn btn-transparent text-primary btn-sm" ><i className="bi bi-x-circle-fill"></i></span>}   </button>
                                         </li>
                                     )
                                 })}
