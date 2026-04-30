@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Next.js (web/)
+web/.next/
+web/out/
+web/build/
+
+# Proxy
+proxy/node_modules/
+
+# OS and editors
+.DS_Store
+*.pem
+
+# Logs and debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
